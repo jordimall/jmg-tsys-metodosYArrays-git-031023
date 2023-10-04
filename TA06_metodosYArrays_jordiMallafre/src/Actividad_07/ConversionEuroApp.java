@@ -5,21 +5,18 @@ import javax.swing.JOptionPane;
 public class ConversionEuroApp {
 
 	public static void main(String[] args) {
-		double euro = obtenerNumeroDeUsuario("Introduce un número que quiers convertir");
-		String opcion = JOptionPane.showInputDialog("Introduce una de las siguientes opciones dolares, yenes o libra");
-		
+		double euro = obtenerNumeroDeUsuario("Introduce la cantidad de euros que quiers convertir");
+		String opcion = JOptionPane.showInputDialog("Introduce una de las siguientes opciones dolar, yen o libra");
+
 		switch (opcion.toUpperCase()) {
-		case "DOLARES":
-			double dolar = conversorEuroDolar(euro);
-			JOptionPane.showMessageDialog(null, euro + "€ es en dolares: " + dolar);
+		case "DOLAR":
+			conversorEuroDolar(euro);
 			break;
-		case "YENES":
-			double yene = conversorEuroYene(euro);
-			JOptionPane.showMessageDialog(null, euro + "€ es en yenes: " + yene);
+		case "YEN":
+			conversorEuroYene(euro);
 			break;
 		case "LIBRA":
-			double libra = conversorEuroLibra(euro);
-			JOptionPane.showMessageDialog(null, euro + "€ es en libras: " + libra);
+			conversorEuroLibra(euro);
 			break;
 		default:
 			JOptionPane.showMessageDialog(null, "Has de seleccionar una de las tres opciones");
@@ -47,22 +44,19 @@ public class ConversionEuroApp {
 			return false;
 		}
 	}
-	
-	public static double conversorEuroDolar(double euro) {
-		double dolar =euro*1.05;
-		
-		return dolar;
+
+	public static void conversorEuroDolar(double euro) {
+		double dolar = euro * 1.05;
+		JOptionPane.showMessageDialog(null, euro + "€ es en dolares: " + dolar);
 	}
-	
-	public static double conversorEuroYene(double euro) {
-		double yene =euro*156.02;
-		
-		return yene;
+
+	public static void conversorEuroYene(double euro) {
+		double yene = euro * 156.02;
+		JOptionPane.showMessageDialog(null, euro + "€ es en yenes: " + yene);
 	}
-	
-	public static double conversorEuroLibra(double euro) {
-		double libra =euro*0.87;
-		
-		return libra;
+
+	public static void conversorEuroLibra(double euro) {
+		double libra = euro * 0.87;
+		JOptionPane.showMessageDialog(null, euro + "€ es en libras: " + libra);
 	}
 }
